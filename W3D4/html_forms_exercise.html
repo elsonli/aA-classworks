@@ -79,41 +79,39 @@
   </section>
 
   <section>
-    <form action="">
+    <form>
+      <!-- Label and input for name -->
       <label for="name">Name</label>
-      <input id="name">
+      <input type="text" id="name">
 
+      <!-- Label and radio input for rating with default of 1 -->
       <label for="rating">Rating</label>
+      <label for="1">1</label>
+      <input name="name" type="radio" checked>
+      <label for="2">2</label>
+      <input name="name" type="radio">
+      <label for="3">3</label>
+      <input name="name" type="radio">
+      <label for="4">4</label>
+      <input name="name" type="radio">
+      <label for="5">5</label>
+      <input name="name" type="radio">
 
-      <label for="rating_1">1</label>
-      <input name="rating" type="radio" id="rating_1" value="1" checked="checked">
-
-      <label for="rating_2">2</label>
-      <input name="rating" type="radio" id="rating_2" value="2">
-
-      <label for="rating_3">3</label>
-      <input name="rating" type="radio" id="rating_3" value="3">
-
-      <label for="rating_4">4</label>
-      <input name="rating" type="radio" id="rating_4" value="4">
-
-      <label for="rating_5">5</label>
-      <input name="rating" type="radio" id="rating_5" value="5">
-      
-      <label for="cooking_expertise">Cooking Expertise</label>
-      <select id="cooking_expertise">
-        <option value="select_cooking_expertise">Select Cooking Expertise</option>
-        <option value="sometimes_cook">Sometimes Cook</option>
-        <option value="cook_everyday">Cook Everyday</option>
-        <option value="cooking_is_a_hobby">Cooking is a Hobby</option>
-        <option value="professional_chef">Professional Chef</option>
+      <!-- Label and select / options -->
+      <label for="expertise">Cooking Expertise</label>
+      <select name="" id="">
+        <option value="1" selected disabled>Select Cooking Expertise</option>
+        <option value="2">Sometimes Cook</option>
+        <option value="3">Cook Everyday</option>
+        <option value="4">Cooking is a Hobby</option>
+        <option value="5">Professional Chef</option>
       </select>
 
-      <label for="review">
-        <textarea name="review" id="review" cols="30" rows="10"></textarea>
-        <!-- Submit Review Button Here -->
+      <!-- Label and text area box with button -->
+      <label for="review">Review
+        <textarea cols="30" rows="10"></textarea>
+        <button>Submit Review</button>
       </label>
-
     </form>
   </section>
 
