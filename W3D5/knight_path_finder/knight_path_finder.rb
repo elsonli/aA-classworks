@@ -5,19 +5,23 @@ class KnightPathFinder
     attr_reader :root_node
 
     def self.valid_moves(pos)
-        x, y = pos
-        
-        poss = [[1,2], [-1,2], [1, -2], [-1, -2], [2, 1], [-2, 1], [2, -1], [-2, -1]]
-        mapped = poss.map { |pair| [x + pair.first, y + pair.last] }
-        prc = Proc.new { |ele| ele >= 0 && ele <= 7 }
-        mapped.select { |pair| prc.call(pair.first) && prc.call(pair.last) }
+        row, col = pos
+        half_knight_moves = [[1, 2], [-1, 2], [1, -2], [-1, -2]]
+        knight_moves = half_knight_moves + half_knight_moves.map(&:reverse)
+
+        knight_moves.map! { |move| [row + move.first, col + move.last] }
+
+        knight_moves.select do |move|
+            (move.first >= 0) && (move.first <= 7) &&
+            (move.last >= 0) && (move.last <= 7)
+        end
     end
 
     def initialize(start_pos)
         @grid = Array.new(8) { Array.new(8) }
-        (0...@grid.length).each do |i|
-            (0...@grid.length).each do |j| 
-                @grid[i][j] = PolyTreeNode.new([i, j])
+        (0...@grid.length).each do |row|
+            (0...@grid.length).each do |col| 
+                @grid[row][col] = PolyTreeNode.new([row, col])
             end
         end
         @root_node = PolyTreeNode.new(start_pos)
@@ -26,12 +30,12 @@ class KnightPathFinder
     end
 
     def [](pos)
-        x, y = pos
-        @grid[x][y]
+        row, col = pos
+        @grid[row][col]
     end
     
-    def new_move_positions(pos)
-        valid_pos = KnightPathFinder.valid_moves(pos)
+    def new_move_positions(curr_pos)
+        valid_pos = KnightPathFinder.valid_moves(curr_pos)
         valid_pos.reject! { |pos| @considered_positions.include?(pos) }
         @considered_positions.concat(valid_pos)
         valid_pos
