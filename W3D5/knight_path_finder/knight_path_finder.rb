@@ -43,9 +43,29 @@ class KnightPathFinder
 
     def build_move_tree
         queue = [@root_node]
-        # pop off root node
-        # check for all possible moves from popped
-        # add all possible moves into queue
-        # link nodes together using tree node methods
+        until queue.empty?
+            next_node = queue.shift
+            possible_moves = self.new_move_positions(next_node.value)
+            possible_moves.each do |possible_move|
+                queue.push(self[possible_move])
+                next_node.add_child(self[possible_move])
+            end
+        end
+        self
+    end
+
+    def trace_path_back(found_node)
+        path = [found_node.value]
+        current_node = found_node
+        until current_node.parent.nil?
+            current_node = current_node.parent
+            path.unshift(current_node.value)
+        end
+        path
+    end
+
+    def find_path(end_pos)
+        end_node = @root_node.dfs(end_pos)
+        trace_path_back(end_node)
     end
 end
