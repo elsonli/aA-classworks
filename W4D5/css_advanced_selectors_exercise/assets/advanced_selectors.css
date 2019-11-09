@@ -43,6 +43,8 @@ ol {
   font-weight: bold;
 }
 
+/* Set the cursor: pointer and outline: none properties for all
+radio buttons, select elements, and submit buttons */
 input[type="radio"] {
   cursor: pointer;
   outline: none;
@@ -58,19 +60,33 @@ select {
   outline: none;
 }
 
+/* Style the background-color of the submit button gold using the last-child
+selector and give it a darkening hover effect. */
 input[type="submit"]:last-child {
   background-color: gold;
 }
 
 input[type="submit"]:hover {
-  -webkit-filter: brightness(10%);
+  -webkit-filter: brightness(90%);
 }
 
+/* Color every other list element in the directions list with a light-grey
+background. */
 ol li:nth-of-type(2n) {
   background-color: lightgray;
 }
 
-/* .user_review:first-child {
-  border: black;
-  border-top: 1px;
-} */
+
+/* Use the + operator to select the first review immediately after the Reviews
+header element and give it a 1px, solid, black, top border (Hint: the class for
+a submitted review will be .user_review). */
+section h2 + .user_review {
+  border-top: 1px solid black;
+}
+
+/* Style the radio buttons with stars! Use the stars.png file in the assets
+folder. You will need to use the WebKit extension property -webkit-appearance:
+none;. */
+input[type="radio"] {
+  -webkit-appearance: none;
+}
