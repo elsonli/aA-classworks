@@ -1,5 +1,3 @@
-
-
 # Write a method #first_anagram? that will generate and store all the possible
 # anagrams of the first string. Check if the second string is one of these.
 def first_anagram?(str_1, str_2)
