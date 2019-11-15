@@ -1,0 +1,19 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ingredients-list {
+  list-style: none !important;
+}
+
+body {
+  line-height: 1.5;
+}
+
+figure > img {
+  max-width: 100%;
+  height: auto;
+}
