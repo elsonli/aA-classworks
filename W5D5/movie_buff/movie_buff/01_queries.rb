@@ -49,10 +49,8 @@ def biggest_cast
     .joins(:actors)
     .group(:id)
     .select(:id, :title)
-    .order('Count(*) DESC')
+    .order('COUNT(*) DESC')
     .limit(3)
-    
-  
 end
 
 def directed_by_one_of(them)
@@ -68,9 +66,9 @@ def directed_by_one_of(them)
   #
   # Find the id and title of all the movies directed by one of 'them'.
   Movie
-  .joins(:director)
-  .where('actors.name IN (?)', them)
-  .select(:id, :title)
+    .joins(:director)
+    .where('actors.name IN (?)', them)
+    .select(:id, :title)
 end
 
 def movie_names_before_1940
@@ -84,5 +82,7 @@ def movie_names_before_1940
   # improve performace for larger queries.
   #
   # Use pluck to find the title of all movies made before 1940.
-Movie.where('yr < 1940').pluck(:title)
+  Movie
+    .where('yr < 1940')
+    .pluck(:title)
 end

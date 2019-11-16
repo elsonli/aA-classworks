@@ -3,20 +3,18 @@ def eighties_b_movies
   # 3 and 5 (inclusive).
   # Show the id, title, year, and score.
   Movie
-  .where('yr between 1980 and 1989')
-  .where('score between 3 and 5')
-  .select(:id, :title, :yr, :score)
+    .where('yr BETWEEN 1980 AND 1989')
+    .where('score BETWEEN 3 AND 5')
+    .select(:id, :title, :yr, :score)
 end
 
 def bad_years
   # List the years in which a movie with a rating above 8 was not released.
- Movie
- .group(:yr)
- .having('max(score) < 8')
- .order(:yr)
- .pluck(:yr)
- # .where.not("score in (?)", (8..10))
- 
+  Movie
+    .group(:yr)
+    .having('MAX(score) < 8')
+    .order(:yr)
+    .pluck(:yr)
 end
 
 def cast_list(title)
@@ -35,11 +33,21 @@ def vanity_projects
   # Show the movie id and title and director's name.
 
   # Note: Directors appear in the 'actors' table.
-
+  Movie
+    .joins(:actors)
+    .where("actors.id = movies.director_id")
+    .where("castings.ord = 1")
+    .select("movies.id, movies.title, actors.name")
 end
 
 def most_supportive
   # Find the two actors with the largest number of non-starring roles.
   # Show each actor's id, name and number of supporting roles.
-
+  Movie
+    .joins(:actors)
+    .where("castings.ord != 1")
+    .group("actors.id")
+    .order("COUNT(*) DESC")
+    .select("actors.id, actors.name, COUNT(*) AS roles")
+    .limit(2)
 end
