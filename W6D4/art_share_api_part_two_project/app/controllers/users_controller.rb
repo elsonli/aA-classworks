@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def index
-    users = User.all
-    render json: users
+    render json: User.all
   end
 
   def create
@@ -14,8 +13,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.find_by(id: params[:id])
-    render json: user
+    render json: User.find_by(id: params[:id])
   end
 
   def update
