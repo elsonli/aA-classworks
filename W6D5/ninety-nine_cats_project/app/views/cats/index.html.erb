@@ -1,0 +1,32 @@
+<h1>All the Meow Meows</h1>
+
+<h4><a href="<%= new_cat_url %>">Make Mew Meow Meow</a></h4>
+<table>
+    <thead>
+        <tr>
+            <th colspan="7">All the Meow Meows</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Name</td>
+            <td>Sex</td>
+          	<td>Birthdate</td>
+            <td>Color</td>
+          	<td>Description</td>
+            <td>Cat</td>
+            <td>Edit</td>
+        </tr>
+        <% @cats.each do |cat| %>
+            <tr>
+              <td><%= cat.name %></td>
+              <td><%= cat.sex %></td>
+              <td><%= cat.birth_date %></td>
+              <td><%= cat.color %></td>
+              <td><%= cat.description %></td>
+              <td><a href="<%= cat_url(cat) %>">Cat</a></td>
+              <td><a href="<%= edit_cat_url(cat) %>">Edit</a></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

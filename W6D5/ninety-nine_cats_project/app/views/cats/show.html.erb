@@ -1,0 +1,27 @@
+<h1>Meow Meow Details</h1>
+<table>
+    <thead>
+        <tr>
+            <th colspan="5">Meow Meow Specs</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Name</td>
+            <td>Sex</td>
+          	<td>Birthdate</td>
+            <td>Color</td>
+          	<td>Description</td>
+        </tr>
+      	<tr>
+            <td><%= @cat.name %></td>
+            <td><%= @cat.sex %></td>
+          	<td><%= @cat.birth_date %></td>
+            <td><%= @cat.color %></td>
+          	<td><%= @cat.description %></td>
+        </tr>
+    </tbody>
+</table>
+
+  <li><a href="<%= cats_url %>">All Meow Meows Page</a></li>
+<br>
