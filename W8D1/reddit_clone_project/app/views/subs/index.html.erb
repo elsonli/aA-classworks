@@ -1,0 +1,16 @@
+sub index
+<% @subs.each do |sub| %>
+    <li>
+      <a href="<%= sub_url(sub) %>"><%= sub.title %></a>
+      <form action="<%= edit_sub_url(sub) %>" method="GET">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+        <input type="hidden" name="_method" value="">
+        <input type="submit" value="edit sub">
+      </form>
+      <form action="<%= sub_url(sub) %>" method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete sub">
+      </form>
+    </li>
+<% end %>

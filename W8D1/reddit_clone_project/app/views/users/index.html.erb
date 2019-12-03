@@ -1,0 +1,11 @@
+user index page
+<% @users.each do |user| %>
+    <li>
+      <a href="<%= user_url(user) %>"><%= user.username %></a>
+      <form action="<%= user_url(user) %>" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete user">
+      </form>
+    </li>
+<% end %>
