@@ -1,0 +1,15 @@
+/* PHASE 2: Notifications */
+.badge {
+  border-radius: 50%;
+  font-size: 14px;
+  padding: 1px 5px;
+  background: black;
+}
+
+.header-list > ul > li:first-child {
+  display: none;
+}
+
+.notif {
+  position: relative;
+}
