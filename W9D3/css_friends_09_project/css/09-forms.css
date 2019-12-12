@@ -1,1 +1,24 @@
 /* PHASE 9: Forms */
+.form {
+  margin: 0px 0px 20px 0px;
+  display: flex;
+}
+
+.form-fieldset {
+  margin: 0px 0px 0px 20px;
+  padding: 19px;
+  width: 500px;
+  background: white;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.input {
+  margin: 0px 0px 20px 0px;
+}
+
+.input > label {
+  display: block;
+  font-weight: 700;
+  
+}
