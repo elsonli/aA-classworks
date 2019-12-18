@@ -1,0 +1,12 @@
+.tile {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  background-color: gray;
+  border-style: outset;
+  padding: 5px;
+}
+
+.explored {
+  border-style: inset;
+}
