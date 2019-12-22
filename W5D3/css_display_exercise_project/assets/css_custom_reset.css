@@ -9,8 +9,6 @@ html, body, div, span, h1, h2, h3, h4, a, ol, ul, li, form, label, article, asid
 
 body {
   line-height: 1.5;
-  width: 900px;
-  margin: 0 auto;
 }
 
 ol, ul {
@@ -24,37 +22,6 @@ input[type="radio"], select, input[type="submit"] {
 
 h2 + .user_review {
   border-top: 1px solid black;
-}
-
-nav ul {
-  display: inline-block;
-}
-
-nav li a {
-  display: inline-block;
-  padding: 20px;
-}
-
-header {
-  display: inline-block;
-}
-
-header img {
-  display: inline-block;
-  height: 100%;
-}
-
-
-
-body section:first-child {
-  width: 700px;
-}
-aside {
-  width: 180px;
-}
-
-body > aside, body > section:first-child {
-  background-color: blue;
 }
 
 /* This is useful when implementing a grid system so that all image elements

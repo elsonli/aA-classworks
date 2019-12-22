@@ -4,6 +4,8 @@ body {
   /* If the user cannot load the Arial font, the sans-serif font is used */
   font-family: Arial, sans-serif;
   background-color: #FEFFF1;
+  width: 900px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -43,25 +45,32 @@ ol {
   font-weight: bold;
 }
 
+input {
+  display: block;
+}
+
 input[type="radio"] {
-    -webkit-appearance: none;
-    width: 27px;
-    height: 27px;
-    background-image: url(../assets/stars.png);
-    vertical-align: bottom;
+  -webkit-appearance: none;
+  width: 27px;
+  height: 27px;
+  background-image: url("./stars.png");
+  vertical-align: bottom;
 }
 
 input[type="radio"]:checked {
   background-position: 30px 30px;
 }
 
+input[type="radio"]:hover {
+  background-position: 30px 60px;
+}
 
 input:last-child {
-    background: gold;
+  background: gold;
 }
 
 input:last-child:hover {
-    -webkit-filter: brightness(90%);
+  -webkit-filter: brightness(90%);
 }
 
 ol li:nth-of-type(2n) {
@@ -69,6 +78,56 @@ ol li:nth-of-type(2n) {
 }
 
 h2 + .user_review {
-    border-top: 1px solid black;
+  border-top: 1px solid black;
 }
 
+nav {
+  display: inline-block;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  display: block;
+  padding: 20px;
+}
+
+aside {
+  width: 180px;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.ingredients-list li {
+  margin: 15px 0px;
+}
+
+body > section {
+  width: 700px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+input[type="text"], select {
+  display: block;
+  width: 175px;
+}
+
+input[type="radio"] {
+  display: inline-block;
+}
+
+select {
+  margin: 10px 0;
+  width: 180px;
+}
+
+textarea {
+  width: 350px;
+}
+
+label {
+  display: block;
+}
