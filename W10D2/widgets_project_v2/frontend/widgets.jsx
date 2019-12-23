@@ -9,5 +9,18 @@ document.addEventListener("DOMContentLoaded", () => {
     {"title": "two", "content": "Second pane here"},
     {"title": "three", "content": "Third pane here"}
   ];
-  ReactDOM.render(<Root tabsContent={tabsContent} />, root);
+  const acNames = [
+    "Abba",
+    "Barney",
+    "Barbara",
+    "Jeff",
+    "Jenny",
+    "Sarah",
+    "Sally",
+    "Xander"
+  ]
+  ReactDOM.render(<Root
+    tabsContent={tabsContent} 
+    acNames={acNames} />,
+    root);
 });
