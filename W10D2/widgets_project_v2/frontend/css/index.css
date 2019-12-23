@@ -1,0 +1,17 @@
+.clock-widget {
+  width: 600px;
+  background-color: orange;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: "Orbitron", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.clock-widget-date, .clock-widget-time {
+  margin: 12px;
+  display: flex;
+  justify-content: space-between;
+}
