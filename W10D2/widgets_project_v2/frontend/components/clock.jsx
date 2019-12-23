@@ -7,6 +7,7 @@ class Clock extends React.Component {
     this.state = {
       time: new Date()
     };
+    this.tick = this.tick.bind(this);
     this.daysOfTheWeek = {
       0: "Sun",
       1: "Mon",
