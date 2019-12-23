@@ -26,6 +26,12 @@ const roleAction = {
   role: "Instructor"
 }
 
+const userRoleAction = {
+  type: "UPDATE_USER_AND_ROLE",
+  user: "Ronil Bhatia",
+  role: "Instructor"
+}
+
 const userReducer = (prevState, action) => {
   Object.freeze(prevState);
   const newState = Object.assign({}, prevState);
@@ -52,3 +58,5 @@ const roleReducer = (prevState, action) => {
 
 console.log(userReducer(state, userAction)); // => {user: "Ronil Bhatia", role: "Student"}
 console.log(roleReducer(state, roleAction)); // => {user: "Ronil", role: "Instructor"}
+console.log(userReducer(state, userRoleAction)) // => {user: "Ronil", role: "Student"}
+console.log(roleReducer(state, userRoleAction)) // => {user: "Ronil", role: "Student"}
