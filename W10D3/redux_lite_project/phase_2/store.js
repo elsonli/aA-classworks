@@ -1,16 +1,4 @@
-// Phase 1 - Store
-class Store {
-  constructor(rootReducer) {
-    this.rootReducer = rootReducer;
-    this.state = {};
-  }
-
-  getState() {
-    return Object.assign({}, this.state);
-  }
-}
-
-// Phase 2 - Reducers and Actions (Run in Chrome console)
+// Phase 2 - Reducers and Actions
 let state = {
   user: "Ronil",
   role: "Student"
@@ -56,6 +44,7 @@ const roleReducer = (prevState, action) => {
   }
 }
 
+// Phase 2 Testing - Part 1
 console.log(userReducer(state, userAction)); // => { user: "Ronil Bhatia", role: "Student" }
 console.log(roleReducer(state, roleAction)); // => { user: "Ronil", role: "Instructor" }
 console.log(userReducer(state, userRoleAction)) // => { user: "Ronil", role: "Student" }
@@ -111,6 +100,8 @@ const myRootReducer = combineReducers({
 // type. When we invoke the `rootReducer`, with `myInconsequentialAction` the
 // second time, the `noise` property doesn't revert back to it's default value,
 // it just doesn't change.
+
+// Phase 2 Testing - Part 2
 let newState = myRootReducer(myInitialState, myInconsequentialAction);
 console.log(newState); // => { noise: "peace and quiet" }
 newState = myRootReducer(newState, myNoisyAction);
