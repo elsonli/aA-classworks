@@ -5,8 +5,20 @@ class Store {
     this.state = {};
   }
 
+  // Phase 3 - Dispatch (Replace constructor)
+  // constructor(rootReducer) {
+  //   this.rootReducer = rootReducer;
+  //   this.state = this.rootReducer({}, { type: "DEFAULT_TYPE" });
+  // }
+
   getState() {
     return Object.assign({}, this.state);
+  }
+
+  // Phase 3 - Dispatch
+  dispatch(action) {
+    const nextState = this.rootReducer(this.state, action);
+    this.state = nextState;
   }
 }
 
@@ -73,6 +85,28 @@ const combineReducers = (reducersObj) => (prevState, action) => {
   }
   return newState;
 }
+
+// Phase 3 - Dispatch (Replace combineReducers)
+// const combineReducers = (reducersObj) => (prevState, action) => {
+//   Object.freeze(prevState);
+
+//   // Initialize a newState that contains ALL of the keys in the reducersObj
+//   // with the value contained in prevState, and null otherwise
+//   const newState = {};
+//   const reducersObjKeys = Object.keys(reducersObj);
+//   for (const key of reducersObjKeys) {
+//     newState[key] = prevState[key] || null;
+//   }
+
+//   // Same logic as combineReducers of Phase 2
+//   const prevStateKeys = Object.keys(prevState);
+//   for (const key of prevStateKeys) {
+//     const oldValue = prevState[key];
+//     const newValue = reducersObj[key](oldValue, action);
+//     newState[key] = newValue;
+//   }
+//   return newState;
+// }
 
 const myNoiseReducer = (prevState = "peace and quiet", action) => {
   switch (action.type) {

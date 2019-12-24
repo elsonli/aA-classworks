@@ -1,4 +1,4 @@
-// Phase 1
+// Phase 1 - Store
 class Store {
   constructor(rootReducer) {
     this.rootReducer = rootReducer;
