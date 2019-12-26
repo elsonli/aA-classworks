@@ -7,34 +7,44 @@ class TodoForm extends React.Component {
     super(props);
     this.state = {
       title: "",
-      body: ""
+      body: "",
+      done: false
     }
     this.defaultState = Object.assign({}, this.state);
-    this.updateTitle = this.updateTitle.bind(this);
-    this.updateBody = this.updateBody.bind(this);
-    this.submitForm = this.submitForm.bind(this);
+    this.handleTitle = this.handleTitle.bind(this);
+    this.handleBody = this.handleBody.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDone = this.handleDone.bind(this);
   }
 
-  updateTitle(event) {
+  handleTitle(event) {
     event.preventDefault()
     this.setState({
       title: event.target.value
     });
   }
 
-  updateBody(event) {
+  handleBody(event) {
     event.preventDefault();
     this.setState({
       body: event.target.value
     });
   }
 
-  submitForm(event) {
+  handleDone(event) {
+    event.preventDefault();
+    this.setState({
+      done: event.target.value
+    });
+  }
+
+  handleSubmit(event) {
     event.preventDefault();
     const newTodo = {
       id: Util.uniqueId(),
       title: this.state.title,
-      body: this.state.body
+      body: this.state.body,
+      done: this.state.done
     }
     this.props.store.dispatch(receiveTodo(newTodo));
     this.setState(this.defaultState);
@@ -43,13 +53,13 @@ class TodoForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.submitForm}>
+      <form onSubmit={this.handleSubmit}>
         <label>Title
           <input
             type="text"
             value={this.state.title}
             placeholder="Buy milk"
-            onChange={this.updateTitle}/>
+            onChange={this.handleTitle}/>
         </label>
         <br/>
         <label>Body
@@ -57,7 +67,14 @@ class TodoForm extends React.Component {
             type="text"
             value={this.state.body}
             placeholder="Whatever is on sale!"
-            onChange={this.updateBody}/>
+            onChange={this.handleBody}/>
+        </label>
+        <br/>
+        <label>Done
+          <select onChange={this.handleDone} value={this.state.done}>
+            <option value="false">No</option>
+            <option value="true">Yes</option>
+          </select>
         </label>
         <br/>
         <input type="submit" value="Create Todo!"/>
