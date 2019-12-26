@@ -48,7 +48,6 @@ class TodoForm extends React.Component {
     }
     this.props.store.dispatch(receiveTodo(newTodo));
     this.setState(this.defaultState);
-    console.log(this.props.store.getState());
   }
 
   render() {

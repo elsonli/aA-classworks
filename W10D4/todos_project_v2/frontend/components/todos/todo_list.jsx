@@ -1,17 +1,22 @@
 import React from "react";
 import TodoListItem from "./todo_list_item";
 import TodoForm from "./todo_form";
-import * as Actions from "../../actions/todo_actions";
 
 const TodoList = (props) => {
   return (
     <div>
       <ul>
         {
-          props.todos.map((todo, idx) => <TodoListItem todo={todo} key={idx} />)
+          props.todos.map((todo, idx) => {
+            return <TodoListItem
+              key={idx}
+              todo={todo}
+              store={store}
+              removeTodo={props.removeTodo} />
+          })
         }
       </ul>
-      <TodoForm store={store} receiveTodo={Actions.receiveTodo} />
+      <TodoForm store={store} receiveTodo={props.receiveTodo} />
     </div>
   )
 }
