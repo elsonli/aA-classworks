@@ -9,7 +9,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   receiveTodo: (todo) => dispatch(Actions.receiveTodo(todo)),
-  removeTodo: (todo) => dispatch(Actions.removeTodo(todo))
+  removeTodo: (todo) => dispatch(Actions.removeTodo(todo)),
+  updateTodo: (todo) => dispatch(Actions.updateTodo(todo))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

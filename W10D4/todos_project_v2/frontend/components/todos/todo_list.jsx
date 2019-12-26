@@ -12,7 +12,9 @@ const TodoList = (props) => {
               key={idx}
               todo={todo}
               store={store}
-              removeTodo={props.removeTodo} />
+              removeTodo={props.removeTodo}
+              updateTodo={props.updateTodo}
+              receiveTodo={props.receiveTodo} />
           })
         }
       </ul>

@@ -1,4 +1,4 @@
-import { RECEIVE_TODO, RECEIVE_TODOS, REMOVE_TODO } from "../actions/todo_actions";
+import { RECEIVE_TODO, RECEIVE_TODOS, REMOVE_TODO, UPDATE_TODO } from "../actions/todo_actions";
 
 // Default State
 const defaultState = {
@@ -33,6 +33,10 @@ const todosReducer = (prevState = defaultState, action) => {
     case REMOVE_TODO:
       newState = Object.assign({}, prevState);
       delete newState[action.todo.id];
+      return newState;
+    case UPDATE_TODO:
+      newState = Object.assign({}, prevState);
+      newState[action.todo.id].done = !prevState[action.todo.id].done;
       return newState;
     default:
       return prevState;
