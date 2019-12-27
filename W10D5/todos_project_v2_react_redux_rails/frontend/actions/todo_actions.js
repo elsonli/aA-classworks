@@ -1,4 +1,5 @@
 import * as APIUtil from "../util/todo_api_util";
+import { receiveErrors, clearErrors } from "./error_actions";
 
 // Action Type Constants
 export const RECEIVE_TODO = "RECEIVE_TODO";
@@ -35,7 +36,7 @@ export const updateTodo = (todo) => {
   }
 }
 
-export const fetchTodos = () => (dispatch) => { // Why wrap in another call
+export const fetchTodos = () => (dispatch) => {
   const fetchedTodos = APIUtil.fetchTodos();
   fetchedTodos.then(res => dispatch(receiveTodos(res)));
   return fetchedTodos;
@@ -43,6 +44,14 @@ export const fetchTodos = () => (dispatch) => { // Why wrap in another call
 
 export const createTodo = (todo) => (dispatch) => {
   const createdTodo = APIUtil.createTodo(todo);
-  createdTodo.then(res => dispatch(receiveTodo(res)));
+  createdTodo.then(
+    res => {
+      dispatch(clearErrors());
+      dispatch(receiveTodo(res));
+    },
+    err => {
+      dispatch(receiveErrors(err.responseJSON));
+    }
+  );
   return createdTodo;
 }
