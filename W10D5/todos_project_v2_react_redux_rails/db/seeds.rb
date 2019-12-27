@@ -8,3 +8,5 @@
 todo_1 = Todo.create(title: "Cheer Ran", body: "Afterglow", done: true)
 todo_2 = Todo.create(title: "Cheer Yukina", body: "Roselia", done: false)
 todo_3 = Todo.create(title: "Cheer Hina", body: "Pastel Palette", done: false)
+todo_4 = Todo.create(title: "Cheer Aya", body: "Pastel Palette", done: false)
+todo_5 = Todo.create(title: "Cheer Yukina", body: "Roselia", done: true)

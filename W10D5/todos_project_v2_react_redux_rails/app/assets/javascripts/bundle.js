@@ -165,7 +165,11 @@ var updateTodo = function updateTodo(todo) {
     type: UPDATE_TODO,
     todo: todo
   };
-};
+}; // Thunk Action Creators
+// Calling these functions creates another function that takes in a dispatch,
+// called with the store's dispatch function when it passes through the thunk
+// (called "immediately", but can be delayed with setTimeout or setInterval)
+
 var fetchTodos = function fetchTodos() {
   return function (dispatch) {
     var fetchedTodos = _util_todo_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchTodos"]();
@@ -182,7 +186,7 @@ var createTodo = function createTodo(todo) {
       dispatch(Object(_error_actions__WEBPACK_IMPORTED_MODULE_1__["clearErrors"])());
       dispatch(receiveTodo(res));
     }, function (err) {
-      dispatch(Object(_error_actions__WEBPACK_IMPORTED_MODULE_1__["receiveErrors"])(err.responseJSON));
+      return dispatch(Object(_error_actions__WEBPACK_IMPORTED_MODULE_1__["receiveErrors"])(err));
     });
     return createdTodo;
   };
@@ -598,7 +602,7 @@ var errorsReducer = function errorsReducer() {
 
   switch (action.type) {
     case RECEIVE_ERRORS:
-      newState[errors] = action.errors.slice();
+      newState[errors] = action.errors.responseJSON.slice();
       return newState;
 
     case CLEAR_ERRORS:

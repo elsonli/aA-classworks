@@ -36,6 +36,10 @@ export const updateTodo = (todo) => {
   }
 }
 
+// Thunk Action Creators
+// Calling these functions creates another function that takes in a dispatch,
+// called with the store's dispatch function when it passes through the thunk
+// (called "immediately", but can be delayed with setTimeout or setInterval)
 export const fetchTodos = () => (dispatch) => {
   const fetchedTodos = APIUtil.fetchTodos();
   fetchedTodos.then(res => dispatch(receiveTodos(res)));
@@ -49,9 +53,7 @@ export const createTodo = (todo) => (dispatch) => {
       dispatch(clearErrors());
       dispatch(receiveTodo(res));
     },
-    err => {
-      dispatch(receiveErrors(err.responseJSON));
-    }
+    err => dispatch(receiveErrors(err))
   );
   return createdTodo;
 }

@@ -6,7 +6,7 @@ const errorsReducer = (prevState = {}, action) => {
   let newState = Object.assign({}, prevState);
   switch (action.type) {
     case RECEIVE_ERRORS:
-      newState[errors] = action.errors.slice();
+      newState[errors] = action.errors.responseJSON.slice();
       return newState;
     case CLEAR_ERRORS:
       newState[errors] = [];
