@@ -454,7 +454,6 @@ function (_React$Component) {
         });
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_todo_form__WEBPACK_IMPORTED_MODULE_2__["default"], {
         store: store,
-        receiveTodo: this.props.receiveTodo,
         createTodo: this.props.createTodo
       }));
     }
@@ -480,8 +479,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _todo_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todo_list */ "./frontend/components/todos/todo_list.jsx");
 /* harmony import */ var _reducers_selectors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../reducers/selectors */ "./frontend/reducers/selectors.js");
 /* harmony import */ var _actions_todo_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/todo_actions */ "./frontend/actions/todo_actions.js");
-/* harmony import */ var _actions_error_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/error_actions */ "./frontend/actions/error_actions.js");
-
 
 
 
@@ -509,12 +506,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     createTodo: function createTodo(todo) {
       return dispatch(_actions_todo_actions__WEBPACK_IMPORTED_MODULE_3__["createTodo"](todo));
-    },
-    receiveErrors: function receiveErrors(errors) {
-      return dispatch(_actions_error_actions__WEBPACK_IMPORTED_MODULE_4__["receiveErrors"](errors));
-    },
-    clearErrors: function clearErrors() {
-      return dispatch(_actions_error_actions__WEBPACK_IMPORTED_MODULE_4__["clearErrors"]());
     }
   };
 };
