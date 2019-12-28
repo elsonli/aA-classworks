@@ -1,28 +1,23 @@
 /* PHASE 3: Layout */
-main {
-  background-color: white;
-  margin: 0 auto;
-  width: 900px;
-  border: 1px solid lightgray;
-  border-top: none;
-}
-
 .content {
   display: flex;
+  width: 900px;
+  margin: auto;
+  background-color: white;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
 }
 
 .content-sidebar {
-  border-right: 1px solid lightgray;
-  width: 250px;
-  padding: 20px;
+  width: 200px;
   min-height: 200px;
+  padding: 20px;
+  border-right: 1px solid #cccccc;
 }
 
 .content-main {
-  padding: 20px;
+  width: 620px;
   min-height: 200px;
-}
-
-footer {
-  /* display: flex; */
+  padding: 20px;
 }
