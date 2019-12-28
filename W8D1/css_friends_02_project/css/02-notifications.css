@@ -1,15 +1,49 @@
 /* PHASE 2: Notifications */
-.badge {
-  border-radius: 50%;
-  font-size: 14px;
-  padding: 1px 5px;
-  background: black;
-}
-
-.header-list > ul > li:first-child {
-  display: none;
-}
-
-.notif {
+.header {
   position: relative;
+  z-index: 1;
+}
+
+.header-list .badge {
+  background-color: #000000;
+  border-radius: 50%;
+  padding: 1px 6px;
+  font-size: 14px;
+}
+
+.header-list-notif {
+  position: relative;
+}
+
+.header-list-ul {
+  display: none;
+  position: absolute;
+  left: -1px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.header-list-ul > li {
+  font-size: 14px;
+  color: #000000;
+  padding: 10px 20px;
+  border-top: 1px solid #cccccc;
+}
+
+.header-list-ul > li:hover {
+  background-color: #eeeeee;
+}
+
+.header-list-notif:hover .badge {
+  background-color: #ff0000;
+}
+
+.header-list-notif:hover > .header-list-ul {
+  background-color: #ffffff;
+  display: block;
 }
