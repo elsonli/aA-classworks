@@ -3,18 +3,17 @@
   overflow: hidden;
 }
 
-.online {
-  display: block;
+.profile-picture > strong {
   position: absolute;
-  overflow: clip;
-  color: white;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  background-color: #0c0;
+  top: -10px;
+  left: -10px;
+  background-color: #00cc00;
   text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ffffff;
+  font-size: 12px;
+  transform: rotate(-45deg) translateX(-25%);
   padding: 5px 30px;
-  margin-right: 50px;
-  transform: rotateZ(-45deg) translate(-32px, -15px);
-  box-shadow: 0 1px 0 0 #070;
+  font-weight: 700;
+  box-shadow: 0px 1px 0px 0px #007700;
 }
