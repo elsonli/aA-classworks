@@ -1,24 +1,73 @@
 /* PHASE 9: Forms */
-.form {
-  margin: 0px 0px 20px 0px;
-  display: flex;
+textarea {
+  resize: none;
 }
 
-.form-fieldset {
-  margin: 0px 0px 0px 20px;
-  padding: 19px;
-  width: 500px;
-  background: white;
-  border: 1px solid lightgray;
+.content-main {
+  display: flex;
+  /* width: 500px; */
+}
+
+.form-title, .form-body {
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+
+.content-main-form {
   border-radius: 5px;
+  margin-left: 20px;
+  background-color: #eeeeee;
+  width: 500px;
+  height: 300px;
+  border: 1px solid #cccccc;
+  font-size: 16px;
+  padding: 20px;
 }
 
 .input {
-  margin: 0px 0px 20px 0px;
+  display: flex;
+  flex-direction: column;
 }
 
-.input > label {
-  display: block;
+.form-title-input {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 10px;
+  border-radius: 5px;
+  width: calc(100% - 22px);
+  margin-bottom: 20px;
+}
+
+.form-body-input {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.form-button {
   font-weight: 700;
-  
+  background-color: #00cc00;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 0px 0px #007700;
+  margin-top: 20px;
+}
+
+.submit {
+  word-spacing: 5px;
+}
+
+.form-button:hover {
+  background-color: #00bb00;
+}
+
+.submit strong {
+  font-weight: 700;
+}
+
+.submit strong:hover {
+  color: #ff0000;
+  cursor: pointer;
 }
