@@ -1,56 +1,42 @@
 /* PHASE 8: Thumbs */
-.profile-friends {
+.profile-thumbs > ul {
   display: flex;
-  flex-wrap: wrap;
 }
 
-.profile-friends > li {
-  width: 60px;
-  margin: 0px 0px 10px 0px;
+.profile-thumbs li:not(:last-child) {
+  margin-right: 10px;
 }
 
-.profile-friends > li:nth-child(3n - 1) {
-  margin: 0px 10px 10px 10px;
+.thumb img {
+  border-radius: 5px;
 }
 
-.thumb {
-  display: block;
+.profile-thumbs li {
   position: relative;
-  height: 58px;
-  width: 58px;
-  border: 1px solid black;
+  border: 1px solid #000000;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-.thumb:before {
-  content: "";
-  display: none;
+.thumb:hover::before {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
-  top: -7px;
-  border-top: 5px solid #000;
-  border-bottom: 0;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
-}
-
-.thumb:after {
-  content: attr(title);
-  display: none;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 65px;
-  background: black;
-  color: white;
   font-size: 12px;
+  content: attr(title);
+  background-color: #000000;
+  color: #ffffff;
   padding: 5px 10px;
+  transform: translateX(-50%);
   border-radius: 5px;
-  
+  bottom: 65px;
+  z-index: 1;
 }
 
-.thumb:hover:before,
-.thumb:hover:after {
-  display: block;
+.thumb:hover::after {
+  position: absolute;
+  bottom: 64px;
+  left: 50%;
+  content: "";
+  border: 10px solid #000000;
+  transform: translateX(-50%) rotate(-45deg);
 }
