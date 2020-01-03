@@ -7,7 +7,7 @@ import SignupFormContainer from "./session_form/signup_form_container";
 const App = () => (
   <div>
     <header>
-      <h1>Bench BnB</h1>
+      <h1>BenchBnB</h1>
       <GreetingContainer />
     </header>
 
