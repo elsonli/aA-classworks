@@ -1,11 +1,11 @@
-import * as SessionAPIUtil from "../util/session_api_util";
+import * as SessionActions from "../actions/session_actions";
 
 const sessionErrorsReducer = (oldState = [], action) => {
   Object.freeze(oldState);
   switch (action.type) {
-    case SessionAPIUtil.RECEIVE_ERRORS:
+    case SessionActions.RECEIVE_ERRORS:
       return action.errors
-    case SessionAPIUtil.RECEIVE_CURRENT_USER:
+    case SessionActions.RECEIVE_CURRENT_USER:
       return [];
     default:
       return oldState;
