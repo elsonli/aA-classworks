@@ -349,3 +349,10 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 4.6ms)
 
 
+Started GET "/" for ::1 at 2020-01-02 23:23:28 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1493ms (Views: 1486.2ms | ActiveRecord: 0.0ms)
+
+
