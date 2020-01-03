@@ -1,0 +1,4 @@
+  [1m[35m (190.1ms)[0m  [1m[35mCREATE DATABASE "bench_bnb_part_1_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (79.3ms)[0m  [1m[35mCREATE DATABASE "bench_bnb_part_1_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
