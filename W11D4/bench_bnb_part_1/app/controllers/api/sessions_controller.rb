@@ -17,7 +17,7 @@ class Api::SessionsController < ApplicationController
       logout!
       render json: {}
     else
-      render text: "404 Not Found", status: 404
+      render json: ["404 Not Found"], status: 404
     end
   end
 end
